@@ -4,7 +4,7 @@
 configure terminal
 !
 voice translation-rule 10
-rule 10 /+507/ /+50372120580/
+rule 10 /3289/ /+50372120580/
 exit
 !
 voice translation-profile Llamadas_WxC_Caida
@@ -17,9 +17,9 @@ icmp-echo 8.8.8.8 source-ip 10.2.2.250
 !
 request-data-size 32
 !
-frequency 60
+frequency 30
 !
-timeout 2000
+timeout 5000
 !
 ip sla schedule 1 life forever start-time now  
 !
@@ -33,10 +33,6 @@ track 1 ip sla 1 state
 !
 delay up 10 down 5
 !
-track 2 ip sla 1 state
-!
-delay up 10 down 5
-!
 end
 wr
 !
@@ -45,10 +41,10 @@ configt terminal
 !
 event manager applet Enlace_WxC_Caido
  event track 1 state down
- action 0001 syslog priority critical msg "La troncal esta caida"
+ action 0001 cli command "ena"
  action 0002 cli command "config t"
  action 0003 cli command "dial-peer voice 301 voip"
- action 0003 cli command "translation-profile outgoing Llamadas_WxC_Caida"
+ action 0004 cli command "translation-profile outgoing Llamadas_WxC_Caida"
  action 0005 cli command "exit"
  action 0006 cli command "dial-peer voice 300 voip"
  action 0007 cli command "no destination dpg 200"
@@ -58,17 +54,17 @@ event manager applet Enlace_WxC_Caido
  exit
 !
 event manager applet Enlace_WxC_arriba
- event track 2 state up
- action 0001 cli command "config t"
- action 0002 cli command "dial-peer voice 301 voip"
- action 0003 cli command "no translation-profile outgoing Llamadas_WxC_Caida"
- action 0004 cli command "exit"
- action 0005 cli command "dial-peer voice 300 voip"
- action 0006 cli command "no destination dpg 300"
- action 0007 cli command "destination dpg 200"
- action 0008 cli command "end"
+ event track 1 state up
+ action 0001 cli command "ena"
+ action 0002 cli command "config t"
+ action 0003 cli command "dial-peer voice 301 voip"
+ action 0004 cli command "no translation-profile outgoing Llamadas_WxC_Caida"
+ action 0005 cli command "exit"
+ action 0006 cli command "dial-peer voice 300 voip"
+ action 0007 cli command "no destination dpg 300"
+ action 0008 cli command "destination dpg 200"
+ action 0009 cli command "end"
 !
 end
 wr
 !
-
