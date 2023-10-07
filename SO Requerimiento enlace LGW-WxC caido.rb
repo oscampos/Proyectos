@@ -4,7 +4,10 @@
 configure terminal
 !
 voice translation-rule 10
-rule 10 /3289/ /+50372120580/
+rule 10 /^7...$/ /+50622843999/
+rule 11 /\+507.......$/ /+50622843999/
+rule 12 /\+507........$/ /+50622843999/
+rule 13 /3289/ /+50622843999/
 exit
 !
 voice translation-profile Llamadas_WxC_Caida
