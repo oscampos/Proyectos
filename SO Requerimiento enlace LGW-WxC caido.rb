@@ -4,7 +4,7 @@
 configure terminal
 !
 voice translation-rule 10
-rule 10 /^7...$/ /+50622843999/
+rule 10 /^7...$/ /6107/
 rule 11 /\+507.......$/ /+50622843999/
 rule 12 /\+507........$/ /+50622843999/
 rule 13 /3289/ /+50622843999/
@@ -16,7 +16,7 @@ exit
 !
 ip sla 1
 !
-icmp-echo 8.8.8.8 source-ip 10.2.2.250
+icmp-echo webex.com source-ip 10.2.2.250
 !
 request-data-size 32
 !
