@@ -4,14 +4,14 @@
 configure terminal
 !
 voice translation-rule 10
-rule 10 /^7...$/ /6107/
-rule 11 /\+507.......$/ /+50622843999/
-rule 12 /\+507........$/ /+50622843999/
-rule 13 /3289/ /+50622843999/
+rule 10 /\+5073004805$/ /90050322686600/
+
+
 exit
 !
 voice translation-profile Llamadas_WxC_Caida
 translate called 10
+
 exit
 !
 ip sla 1
