@@ -4,7 +4,7 @@
 configure terminal
 !
 voice translation-rule 10
-rule 10 /\+5073004805$/ /90050322686600/
+rule 10 /\+5073004805$/ /901150322686600/
 
 
 exit
@@ -20,7 +20,7 @@ icmp-echo webex.com source-ip 10.2.2.250
 !
 request-data-size 32
 !
-frequency 30
+frequency 300
 !
 timeout 5000
 !
