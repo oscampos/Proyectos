@@ -4,7 +4,7 @@
 configure terminal
 !
 voice translation-rule 10
-rule 10 /\+5073004805$/ /90050322686600/
+rule 10 /\+50322686600$/ /+50224242200/
 
 
 exit
@@ -16,7 +16,7 @@ exit
 !
 ip sla 1
 !
-icmp-echo webex.com source-ip 10.2.2.250
+icmp-echo 8.8.8.8 source-ip 10.3.2.250
 !
 request-data-size 32
 !
@@ -40,7 +40,7 @@ end
 wr
 !
 !
-configt terminal
+config terminal
 !
 event manager applet Enlace_WxC_Caido
  event track 1 state down
