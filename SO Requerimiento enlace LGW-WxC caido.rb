@@ -1,5 +1,20 @@
 / Este sere¿a la prueba funcional 2 que se podria utilizar para mientras ya que la anterior se ejecuta demasiado /
 
+
+
+
+
+
+
+
+
+No tienen numero de Service Desk 
+
+
+
+
+
+
 !
 configure terminal
 !
@@ -16,7 +31,7 @@ exit
 !
 ip sla 1
 !
-icmp-echo webex.com source-ip 10.2.2.250
+icmp-echo webex.com source-ip 10.1.2.250
 !
 request-data-size 32
 !
