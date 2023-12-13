@@ -9,6 +9,10 @@ No tienen directo service desk
 
 
 
+//para el transcoding
+
+voice class codec 1
+ codec preference 1 g711alaw
 
 
 
@@ -26,8 +30,8 @@ No tienen directo service desk
 configure terminal
 !
 voice translation-rule 10
-rule 10 /\+18095665162$/ /01150322686600/
-rule 11 /\+18095665161$/ /01150322686600/
+rule 10 /\+18095665162$/ /901150322686600/
+rule 11 /\+18095665161$/ /901150322686600/
 
 
 exit
