@@ -26,7 +26,8 @@ No tienen directo service desk
 configure terminal
 !
 voice translation-rule 10
-rule 10 /\+5073004805$/ /90050322686600/
+rule 10 /\+18095665162$/ /01150322686600/
+rule 11 /\+18095665161$/ /01150322686600/
 
 
 exit
@@ -38,7 +39,7 @@ exit
 !
 ip sla 1
 !
-icmp-echo webex.com source-ip 10.2.2.250
+icmp-echo webex.com source-ip 10.8.2.250
 !
 request-data-size 32
 !
@@ -62,7 +63,7 @@ end
 wr
 !
 !
-configt terminal
+config terminal
 !
 event manager applet Enlace_WxC_Caido
  event track 1 state down
